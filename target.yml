@@ -1,0 +1,23 @@
+arch: x64
+pc: 0x11A9
+end_address: [0x1205,0x1207]
+initial_sp : 0x110000
+memory_map:
+  code: {base_addr: 0x0000000, file_path: /home/wsxk/Desktop/Download/wsxk_fuzzer/target,
+    permissions: r-x, size: 0x10000}
+  stack: {base_addr: 0x00100000,permissions: rw-, size: 0x10000}
+  fuzz: {base_addr: 0x00201000,permissions: rw-, size: 0x10000}
+
+handlers:
+  malloc:
+    handler: wsxk_fuzzer.module.handlers.malloc
+    addr: 0x11BA
+  scanf:
+    handler: wsxk_fuzzer.module.handlers.scanf
+    addr: 0x11EE
+  printf:
+    handler: wsxk_fuzzer.module.handlers.printf
+    addr: 0x11D6
+  puts:
+    handler: wsxk_fuzzer.module.handlers.puts
+    addr: 0x11FA
