@@ -21,8 +21,8 @@ def main():
     with open(config_file_path,'rb') as f:
         file = yaml.load(f,Loader=yaml.FullLoader)
         globs.config_file_info = file
-    for v,k in file.items():
-        print(v,k)
+    # for v,k in file.items():
+    #     print(v,k)
 
     # step 2 : config unicorn engine
     config_unicorn()
@@ -40,3 +40,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# afl-fuzz -U -m none -i ./sample_inputs -o ./output -- python3 fuzzerv2.py @@

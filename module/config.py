@@ -1,5 +1,5 @@
 from . import globs 
-from .arch import x32,x64,arm,arm64
+from . import x32,x64,arm,arm64
 import sys
 def config_unicorn():
     if 'arch' not in globs.config_file_info:
